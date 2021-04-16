@@ -3,25 +3,24 @@
 
 
 void read_comand(char** argv)
-{
+{   
     char cadena[255];
     char* argc[255];
+    int i = 0;
 
     fgets(cadena, sizeof(cadena), stdin);
     cadena[strlen(cadena)] = '\x0';
 
-    argc[0] = strtok(cadena, " ");
-    int i = 0;
+    argc[i] = strtok(cadena, " \n");
 
     while (argc[i] != NULL)
     {
         i++;
-        argc[i] = strtok(NULL, " ");
-    } 
+        argc[i] = strtok(NULL, " \n");
+    }
 
     for (int j = 0; j < i; j++)
         argv[j] = argc[j];
 
-    printf("i = %d \n", i);
-    argv[i-1] = NULL;
+    argv[i] = NULL;
 }
