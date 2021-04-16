@@ -9,7 +9,7 @@ int main(void)
     char* argv[256];
 
     printf(":| &> ");
-    read_comand(argv);
+    read_command(argv);
     
     execvp(argv[0], argv);
     

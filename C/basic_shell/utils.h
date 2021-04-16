@@ -1,6 +1,6 @@
 #ifndef __UTILS__
 #define __UTILS__
 
-void read_comand(char** argv);
+void read_command(char** argv);
 
 #endif
