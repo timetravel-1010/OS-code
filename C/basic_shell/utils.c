@@ -10,16 +10,11 @@ void read_command(char** argv)
     fgets(cadena, sizeof(cadena), stdin);
     cadena[strlen(cadena)] = '\x0';
 
-    argc[i] = strtok(cadena, " \n");
+    argv[i] = strtok(cadena, " \n");
 
-    while (argc[i] != NULL)
+    while (argv[i] != NULL)
     {
         i++;
-        argc[i] = strtok(NULL, " \n");
+        argv[i] = strtok(NULL, " \n");
     }
-
-    for (int j = 0; j < i; j++)
-        argv[j] = argc[j];
-
-    argv[i] = NULL;
 }
