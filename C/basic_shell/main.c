@@ -1,26 +1,28 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "utils.h"
 
-int main(int argc, char** argv)
-{
-    char cadena[255];
-    
+
+int main(void)
+{   
+    char* argv[255];
+    int i = 0;
+
     printf(":| &> ");
-    fgets(cadena, sizeof(cadena), stdin);
-
-    cadena[strlen(cadena)] = '\x0';
-    printf("comando: ");
-    puts(cadena);
-
-    char *p = cadena;
-    while(*p != '\0')
+    read_comand(argv);
+    printf("argv[2] = %s \n", argv[2]);
+    while (argv[i] != NULL)
     {
-        printf("%c\n", *p);
-        p++;
+        printf("%s \n", argv[i]);
+        i++;
     }
-    //execvp(cadena[0], cadena);
+    
+    /*do
+    {
+        
+    } while (true);
+    */
 
     return 0;
 }
