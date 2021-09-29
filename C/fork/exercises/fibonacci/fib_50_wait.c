@@ -10,9 +10,9 @@ int main(void)
     pid = fork();
 
     if (pid == 0)
-        printf("fibonacci(50) = %ld \n", fibonacci(50));
+        printf("fibonacci(35) = %ld \n", fibonacci(35));
     else if (pid > 0)
-    ; /* El padre no hace nada */
+        wait(NULL); /* El padre espera que termine el hijo. */
     else
     {
         printf("Ha fallado el fork()");

@@ -1,4 +1,4 @@
-#ifndef __fibfun_h__
+q#ifndef __fibfun_h__
 #define __fibfun_h__
 
 long int fibonacci(int);

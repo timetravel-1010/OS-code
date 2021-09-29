@@ -39,7 +39,7 @@ int main(void)
         wait(&status);
         if (WIFEXITED(status)) /* Se verifica que el estado es de salida. */
         {
-            if (WEXITSTATUS(status) == 0)
+            if (!WEXITSTATUS(status))
                 printf(":) &> ");
             else
                 printf(":( &> ");

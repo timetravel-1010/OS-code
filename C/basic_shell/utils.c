@@ -13,7 +13,7 @@ void read_command(char** argv)
     argv[i] = strtok(cadena, " \n");
 
     while (argv[i] != NULL)
-    {
+    {  
         i++;
         argv[i] = strtok(NULL, " \n");
     }
